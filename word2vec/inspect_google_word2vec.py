@@ -13,8 +13,8 @@ def getSimilarity(a,b):
 	logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 	# Load Google's pre-trained Word2Vec model.
-	model = gensim.models.Word2Vec.load_word2vec_format('../dataset/GoogleNews-vectors-negative300.bin', binary=True)  
-
+	# model1 = gensim.models.Word2Vec.load_word2vec_format('/Users/lihao/scikit_learn_data/GoogleNews-vectors-negative300.bin', binary=True)  
+	model2 = gensim.models.Word2Vec.load_word2vec_format('/Users/lihao/scikit_learn_data/freebase-vectors-skipgram1000.bin', binary=True)  
 
 
 	# Does the model include stop words?
@@ -32,7 +32,7 @@ def getSimilarity(a,b):
 
 	# print "wordsInVocab: " + str(wordsInVocab)
 	#  print "wordsInVocab: " + str(wordsInVocab)
-	return model.similarity(a, b) 
+	return model2.similarity(a, b)
 
 # Write out the words in 100k chunks.
 # for wordIndex in range(0, wordsInVocab, wordsPerFile):

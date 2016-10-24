@@ -2,3 +2,6 @@ dataset/
 .DS_Store
 papers/
 *.npy
+*.pyc
+cython/build/temp.macosx-10.6-x86_64-2.7/
+*.docx

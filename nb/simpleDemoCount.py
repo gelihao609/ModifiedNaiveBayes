@@ -34,10 +34,14 @@ for i in range(similarityMatrix.shape[0]):
 vector_train_array = vectors_train.toarray()
 vectorArray_matrix = np.matrix(vector_train_array)
 similarityMatrix_matrix = np.matrix(similarityMatrix)
-vector_train_array = vectorArray_matrix*similarityMatrix_matrix
+similarity_weight = vectorArray_matrix*similarityMatrix_matrix
+scalable_factor = 0.1
+vector_train_array = vector_train_array + 0.1 * similarity_weight
 
 print "similarityMatrix_matrix"
 print similarityMatrix_matrix
+print "similarity_weight"
+print similarity_weight
 print "before"
 print vectorArray_matrix
 print "after"
