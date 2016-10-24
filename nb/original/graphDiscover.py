@@ -44,9 +44,9 @@ def columnMerge(ndarray, clusters, skipIndexs):
 	for index, cluster in enumerate(actualClusters):
 		print str(index) + str(cluster)
 		newCol = np.zeros((rows))
-		for i in cluster:
-			newCol = newCol+ndarray[:,i]
-		ndarray = np.column_stack((ndarray,newCol))
+		merged = sum((ndarray[:,i]) for i in cluster)
+		mergedCol = merged.reshape(len(merged),1)
+		ndarray = np.column_stack((ndarray,mergedCol))
 		# print ndarray 
 	flattened_clusters = [y for x in actualClusters for y in x]
 	flattened_clusters.sort()
