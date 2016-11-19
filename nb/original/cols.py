@@ -27,10 +27,13 @@ e = np.column_stack((a,d))
 # for index, item in enumerate(list_of_lists):
 # 	if(index not in fil):
 # 		print item
-a = np.arange(16).reshape(4,4)
-b = [1,2]
-print a 
-c = sum((a[:,i]) for i in b)
-d = c.reshape(len(c),1)
-e = np.column_stack((a,d))
-print e
+
+# a = np.arange(16).reshape(4,4)
+# b = [1,2]
+# print a 
+# c = sum((a[:,i]) for i in b)
+# d = c.reshape(len(c),1)
+# e = np.column_stack((a,d))
+
+b = [range(6)]
+print b

@@ -39,10 +39,12 @@ def getSimilarClusters(graph):
 	return bfs(createAdjList(graph))
 
 def columnMerge(ndarray, clusters, skipIndexs):
+	print "skipIndexs: " + str(skipIndexs)
 	actualClusters = [i for j, i in enumerate(clusters) if j not in skipIndexs]
+	# print actualClusters
 	rows = ndarray.shape[0]
 	for index, cluster in enumerate(actualClusters):
-		print str(index) + str(cluster)
+		# print str(index) + str(cluster)
 		newCol = np.zeros((rows))
 		merged = sum((ndarray[:,i]) for i in cluster)
 		mergedCol = merged.reshape(len(merged),1)
